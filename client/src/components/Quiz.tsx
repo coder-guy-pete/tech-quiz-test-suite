@@ -23,6 +23,10 @@ const Quiz = () => {
     }
   };
 
+  // Checking the output of the questions array
+  console.log(questions);
+  console.log(questions.length);
+
   const handleAnswerClick = (isCorrect: boolean) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -81,7 +85,7 @@ const Quiz = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className='card p-4'>
+    <div data-testid="quiz-component" className='card p-4'>
       <h2>{currentQuestion.question}</h2>
       <div className="mt-3">
       {currentQuestion.answers.map((answer, index) => (
