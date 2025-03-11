@@ -1,5 +1,6 @@
 describe('React Tech Quiz', () => {
     beforeEach(() => {
+        cy.intercept('GET', '/api/questions/random', { fixture: 'mockQuestions.json' }).as('getQuestions')
         cy.visit('/');
     });
 
@@ -23,11 +24,11 @@ describe('React Tech Quiz', () => {
 
     it('should display the quiz completion screen when all questions are answered', () => {
         cy.get('button').contains('Start Quiz').click();
-        cy.get('h2').then(($questions) => {
-            const questionCount = 10; // need to update this once I figure out how to get the question count
-            for (let i = 0; i < questionCount; i++) {
-                cy.get('.btn.btn-primary').first().click();
-            }
+        cy.fixture('mockQuestions.json').then((questions) => {
+        const questionCount = questions.length;
+        for (let i = 0; i < questionCount; i++) {
+            cy.get('button').first().click();
+        }
             cy.contains('Quiz Completed').should('be.visible');
             cy.contains('Your score:').should('be.visible');
             cy.contains('Take New Quiz').should('be.visible');
@@ -36,8 +37,8 @@ describe('React Tech Quiz', () => {
 
     it('should start a new quiz when the "Take New Quiz" button is clicked', () => {
         cy.get('button').contains('Start Quiz').click();
-        cy.get('h2').then(($questions) => {
-            const questionCount = 10;
+        cy.fixture('mockQuestions.json').then((questions) => {
+            const questionCount = questions.length;
             for (let i = 0; i < questionCount; i++) {
                 cy.get('.btn.btn-primary').first().click();
             }

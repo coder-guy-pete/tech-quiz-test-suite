@@ -32,11 +32,11 @@ describe('<Quiz />', () => {
 
   it('should display quiz completed when all questions are answered', () => {
     cy.mount(<Quiz />)
+    cy.intercept('GET', '/api/questions/random', { fixture: 'mockQuestions.json' }).as('getQuestions')
     cy.get('button').contains('Start Quiz').click()
 
-    cy.get('h2').then(($questions) => {
-      const questionCount = 10; //currently hardcoded until I figure out how to get the question count from the component's state
-
+    cy.fixture('mockQuestions.json').then((questions) => {
+      const questionCount = questions.length;
       for (let i = 0; i < questionCount; i++) {
         cy.get('button').first().click();
       }
@@ -46,11 +46,11 @@ describe('<Quiz />', () => {
 
   it('should display the score when the quiz is completed', () => {
     cy.mount(<Quiz />)
+    cy.intercept('GET', '/api/questions/random', { fixture: 'mockQuestions.json' }).as('getQuestions')
     cy.get('button').contains('Start Quiz').click()
 
-    cy.get('h2').then(($questions) => {
-      const questionCount = 10; //currently hardcoded until I figure out how to get the question count from the component's state
-
+    cy.fixture('mockQuestions.json').then((questions) => {
+      const questionCount = questions.length;
       for (let i = 0; i < questionCount; i++) {
         cy.get('button').first().click();
       }
@@ -60,11 +60,11 @@ describe('<Quiz />', () => {
 
   it('should display a button to take a new quiz after the quiz is completed', () => {
     cy.mount(<Quiz />)
+    cy.intercept('GET', '/api/questions/random', { fixture: 'mockQuestions.json' }).as('getQuestions')
     cy.get('button').contains('Start Quiz').click()
 
-    cy.get('h2').then(($questions) => {
-      const questionCount = 10; //currently hardcoded until I figure out how to get the question count from the component's state
-
+    cy.fixture('mockQuestions.json').then((questions) => {
+      const questionCount = questions.length;
       for (let i = 0; i < questionCount; i++) {
         cy.get('button').first().click();
       }
