@@ -64,6 +64,7 @@ describe('<Quiz />', () => {
     cy.get('button').contains('Start Quiz').click()
 
     cy.fixture('mockQuestions.json').then((questions) => {
+      console.log(questions)
       const questionCount = questions.length;
       for (let i = 0; i < questionCount; i++) {
         cy.get('button').first().click();

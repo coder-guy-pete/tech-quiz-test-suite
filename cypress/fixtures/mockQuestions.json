@@ -4,19 +4,19 @@
     "question": "Which is a modern front end framework?",
     "answers": [
       {
-        "answer": "React",
+        "text": "React",
         "isCorrect": true
       },
       {
-        "answer": "Angular",
+        "text": "Angular",
         "isCorrect": false
       },
       {
-        "answer": "Vue",
+        "text": "Vue",
         "isCorrect": false
       },
       {
-        "answer": "Ember",
+        "text": "Ember",
         "isCorrect": false
       }
     ]
@@ -26,19 +26,19 @@
     "question": "Which is a modern back end framework?",
     "answers": [
       {
-        "answer": "Express",
+        "text": "Express",
         "isCorrect": true
       },
       {
-        "answer": "Django",
+        "text": "Django",
         "isCorrect": false
       },
       {
-        "answer": "Rails",
+        "text": "Rails",
         "isCorrect": false
       },
       {
-        "answer": "Spring",
+        "text": "Spring",
         "isCorrect": false
       }
     ]
@@ -48,19 +48,19 @@
     "question": "Which is a modern database?",
     "answers": [
       {
-        "answer": "MongoDB",
+        "text": "MongoDB",
         "isCorrect": true
       },
       {
-        "answer": "MySQL",
+        "text": "MySQL",
         "isCorrect": false
       },
       {
-        "answer": "PostgreSQL",
+        "text": "PostgreSQL",
         "isCorrect": false
       },
       {
-        "answer": "SQLite",
+        "text": "SQLite",
         "isCorrect": false
       }
     ]
