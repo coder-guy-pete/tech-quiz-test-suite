@@ -42,11 +42,11 @@
 4. `npm run build` to build the application
 5. `npm run seed` to seed the database
 6. `npm run start:dev` to test the application locally
-7. `npm run cypress` to open cypress and initiate the tests
+7. `npm run cypress` to open cypress and initiate the tests or `npm run test` to initiate tests in a headless browser
 
 ## Usage
 
-
+[Video Walkthrough](<https://drive.google.com/file/d/1io_WqA5LcR3KOoV_Cvfpv7q3h-sowUjw/view?usp=sharing>)
 
 ## Contributing
 
